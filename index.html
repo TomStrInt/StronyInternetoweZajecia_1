@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+                     initial-scale=1.0"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <title>Allegretto - znajdź wszystko, o czym marzysz!</title>
+        <style>
+          .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #6c757d;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+          }
+          .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+          }
+          .sidebar a:hover {
+            color: #f1f1f1;
+          }
+          .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+          .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #555;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+          }
+          .openbtn:hover {
+            background-color: #444;
+          }
+        </style>
+        
+    </head>
+    <body style="background-color: rgb(34, 32, 111);">
+     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><strong>Allegretto</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Strona główna <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Szukaj według miejsca</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Kategorie
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Akcesoria RTV</a>
+                <a class="dropdown-item" href="#">Drukarki</a>
+                <a class="dropdown-item" href="#">Laptopy</a>
+                <a class="dropdown-item" href="#">PC</a>
+                <a class="dropdown-item" href="#">Smartfony</a>
+                <a class="dropdown-item" href="#">Telewizory</a>
+                <a class="dropdown-item" href="#">Akcesoria do smartfonów</a>
+                <a class="dropdown-item" href="#">Tablety</a>
+                <a class="dropdown-item" href="#">Skanery</a>
+                <a class="dropdown-item" href="#">Urządzenia wielofunkcyjne</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Więcej</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Strefa okazji</a>
+            </li>
+
+<!--
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Strefa okazji</a>
+            </li>
+          -->
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Znajdź coś dla siebie" aria-label="Search" style="width: 500px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
+          </form>
+
+
+          <ul class="navbar-nav my-sm-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Moje konto
+              </a>
+           
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Zaloguj</a>
+            <a class="dropdown-item" href="#">Zalóż konto</a>
+            <a class="dropdown-item" href="#">Pomoc</a>
+
+          </div>
+          </li>
+          </ul>
+ <!--         <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        -->
+
+        
+        </div>
+      </nav>
+    <div style="height: 50px;"></div>
+      
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="sluchawki.jpg" alt="sluchawki">
+          <div class="card-body">
+            <h5 class="card-title">Sluchawki Apple</h5>
+            <p class="card-text">Znakomite bezprzewodowe sluchawki...</p>
+            <p class="card-text"><small class="text-muted">Dodano 3 min temu</small></p>
+            <a href="#" class="btn btn-primary">Zobacz ofertę</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="komputer.jpg" alt="komputer">
+          <div class="card-body">
+            <h5 class="card-title">Komputer PC gamingowy</h5>
+            <p class="card-text">Nowoczesny komputer, procesor Intel i7...</p>
+            <p class="card-text"><small class="text-muted">Dodano 32 min temu</small></p>
+            <a href="#" class="btn btn-primary">Zobacz ofertę</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="nokia.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Smartfon 8GB RAM</h5>
+            <p class="card-text">Znakomity design, ekstremalna wydajność</p>
+            <p class="card-text"><small class="text-muted">Dodano 5 godz temu</small></p>
+            <a href="#" class="btn btn-primary">Zobacz ofertę</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="drukarka.jpg" alt="drukarka">
+          <div class="card-body">
+            <h5 class="card-title">Smartfon 8GB RAM</h5>
+            <p class="card-text">Wyjątkowa okazja!!! Drukarka laserowa...</p>
+            <p class="card-text"><small class="text-muted">Dodano przedwczoraj</small></p>
+            <a href="#" class="btn btn-primary">Zobacz ofertę</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      
+      <div style="height: 50px;">
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Poprzedni</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Następny</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <!-- Filtry -->
+        <div class="container">
+          <h2>Filtry</h2>
+          <form>
+            <div class="form-group">
+              <label for="priceFrom">Cena (od):</label>
+              <input type="number" class="form-control" id="priceFrom">
+            </div>
+            <div class="form-group">
+              <label for="priceTo">Cena (do):</label>
+              <input type="number" class="form-control" id="priceTo">
+            </div>
+            <div class="form-group">
+              <label for="location">Lokalizacja:</label>
+              <input type="text" class="form-control" id="location">
+            </div>
+            <div class="form-group">
+              <label for="dateAdded">Kiedy dodano:</label>
+              <select class="form-control" id="dateAdded">
+                <option>Dzisiaj</option>
+                <option>Ostatni tydzień</option>
+                <option>Ostatni miesiąc</option>
+                <option>Ostatni rok</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Zastosuj</button>
+          </form>
+        </div>
+      </div>
+
+      <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+
+// wyjeżdżanie panelu
+document.addEventListener('mousemove', function(e) {
+  if (e.clientX > window.innerWidth - 80) {
+    openNav();
+  } else {
+    closeNav();
+  }
+});
+</script>
+
+
+<div>
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-dark"
+          style="background-color: #ECEFF1"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4 text-white"
+             style="background-color: #474ba4"
+             >
+      <!-- Left -->
+      <div class="me-5">
+       
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Dane handlowe</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Allegretto Sp. z o. o.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Kupuj</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-dark">Wprowadzenie do kupowania</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Zgłoś problem</a>
+            </p>
+            <p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Sprzedawaj</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-dark">Wporwadznie do sprzedawania</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark"> Rozwiązywanie problemów</a>
+            </p>
+        
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Kontakt</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> Warszawa, Mazowiecka 1</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2024 Allegretto
+      <a class="text-dark"
+      </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
+
+
+
+
+       
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
